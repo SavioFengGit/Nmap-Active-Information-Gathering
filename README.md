@@ -230,7 +230,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
 <img src="smb1.png" width=80% height="auto"><br><br>
 **nmap -p445 --script smb-protocols  10.3.27.255<br>**
 <img src="smb2.png" width=70% height="auto"><br><br>
-**nmap -p445 --script smb-enum-shares 10.3.27.255<br>**
+**nmap -p445 --script smb-enum-shares 10.3.27.255 (I refreshed the lab, this is why there is another ip in the screenshot)<br>**
 <img src="smb3.png" width=70% height="auto"><br><br>
 
 
