@@ -216,12 +216,23 @@ Port scanning 21 (FTP), 22 (SSH), 80 (HTTP), 139 and 445 (SMB), 1433 and 3306 (M
 
 
 
+## Example of enumeration with NMAP of SMB <br>
+Command: nmap 10.3.27.255
+<img src="nmapscan.png" width=70% height="auto"><br><br>
+Command: map -sV -p135,139,445,3389 10.3.27.255 (scan the port 135,139,445,3389 with service and version detection enabled)
+<img src="nmapservice.png" width=70% height="auto"><br><br>
+Command: nmap -O -p135,139,445,3389 10.3.27.255 (OS detection enabled)
+<img src="nmapos.png" width=70% height="auto"><br><br>
+Command: nmap -sC -p135,139,445,3389 10.3.27.255 (script scanning enabled)
+<img src="nmapscript.png" width=70% height="auto"><br><br>
+## Running some script for SMB: 
+nmap --script smb-os-discovery.nse -p 445 10.3.27.255
+<img src="smb1.png" width=70% height="auto"><br><br>
+nmap -p445 --script smb-protocols  10.3.27.255
+<img src="smb2.png" width=70% height="auto"><br><br>
+nmap -p445 --script smb-enum-shares 10.3.27.255
+<img src="smb3.png" width=70% height="auto"><br><br>
 
 
-
-
-
-
-
-
-
+#Author
+<b>Xiao Li Savio Feng</b>
