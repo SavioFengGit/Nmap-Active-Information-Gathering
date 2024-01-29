@@ -7,15 +7,15 @@ Nmap is a tool that can scan IP addresses and ports in a network and detect inst
 <img src="nmap.png" width=70% height="auto"><br>
 
 Nmap 7.94SVN ( https://nmap.org )
-Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
-**TARGET SPECIFICATION:**
+Usage: nmap [Scan Type(s)] [Options] {target specification}<br><br>
+### **TARGET SPECIFICATION:**
   Can pass hostnames, IP addresses, networks, etc.
   Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0.0-255.1-254
   - -iL <inputfilename>: **Input from list of hosts/networks**
   - -iR <num hosts>: **Choose random targets**
   - --exclude <host1[,host2][,host3],...>: **Exclude hosts/networks**
   - --excludefile <exclude_file>: **Exclude list from file<br>**
-**HOST DISCOVERY:**
+### **HOST DISCOVERY:**
   - -sL: **List Scan - simply list targets to scan**
   - -sn: **Ping Scan - disable port scan**
   - -Pn: **Treat all hosts as online -- skip host discovery**
@@ -26,7 +26,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - --dns-servers <serv1[,serv2],...>: **Specify custom DNS servers**
   - --system-dns: **Use OS's DNS resolver**
   - --traceroute: **Trace hop path to each host<br>**
-**SCAN TECHNIQUES:**
+### **SCAN TECHNIQUES:**
   - -sS/sT/sA/sW/sM: **TCP SYN/Connect()/ACK/Window/Maimon scans**
   - -sU: **UDP Scan**
   - -sN/sF/sX: **TCP Null, FIN, and Xmas scans**
@@ -35,7 +35,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - -sY/sZ: **SCTP INIT/COOKIE-ECHO scans**
   - -sO: **IP protocol scan**
   - -b <FTP relay host>: **FTP bounce scan<br>**
-**PORT SPECIFICATION AND SCAN ORDER:**
+### **PORT SPECIFICATION AND SCAN ORDER:**
   - -p <port ranges>: **Only scan specified ports**
     Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9
   - --exclude-ports <port ranges>: **Exclude the specified ports from scanning**
@@ -43,13 +43,13 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - -r: **Scan ports sequentially - don't randomize**
   - --top-ports <number>: **Scan <number> most common ports**
   - --port-ratio <ratio>: **Scan ports more common than <ratio><br>**
-**SERVICE/VERSION DETECTION:**
+### **SERVICE/VERSION DETECTION:**
   - -sV: **Probe open ports to determine service/version info**
   - --version-intensity <level>: **Set from 0 (light) to 9 (try all probes)**
   - --version-light: **Limit to most likely probes (intensity 2)**
   - --version-all: **Try every single probe (intensity 9)**
   - --version-trace: **Show detailed version scan activity (for debugging)<br>**
-**SCRIPT SCAN:**
+### **SCRIPT SCAN:**
   - -sC: **equivalent to --script=default**
   - --script=<Lua scripts>:**<Lua scripts> is a comma separated list of
            directories, script-files or script-categories**
@@ -60,11 +60,11 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - --script-help=<Lua scripts>: **Show help about scripts.
            <Lua scripts> is a comma-separated list of script-files or
            script-categories.<br>**
-**OS DETECTION:**
+### **OS DETECTION:**
   - -O: **Enable OS detection**
   - --osscan-limit: **Limit OS detection to promising targets**
   - --osscan-guess: **Guess OS more aggressively<br>**
-**TIMING AND PERFORMANCE:**
+### **TIMING AND PERFORMANCE:**
   Options which take <time> are in seconds, or append 'ms' (milliseconds),
   's' (seconds), 'm' (minutes), or 'h' (hours) to the value (e.g. 30m).
   - -T<0-5>: **Set timing template (higher is faster)**
@@ -77,7 +77,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - --scan-delay/--max-scan-delay <time>: **Adjust delay between probes**
   - --min-rate <number>: **Send packets no slower than <number> per second**
   - --max-rate <number>: **Send packets no faster than <number> per second<br>**
-**FIREWALL/IDS EVASION AND SPOOFING:**
+### **FIREWALL/IDS EVASION AND SPOOFING:**
   - -f; --mtu <val>: **fragment packets (optionally w/given MTU)**
   - -D <decoy1,decoy2[,ME],...>: **Cloak a scan with decoys**
   - -S <IP_Address>: **Spoof source address**
@@ -91,7 +91,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - --ttl <val>: **Set IP time-to-live field**
   - --spoof-mac <mac address/prefix/vendor name>: **Spoof your MAC address**
   - --badsum: **Send packets with a bogus TCP/UDP/SCTP checksum<br>**
-**OUTPUT:**
+### **OUTPUT:**
   - -oN/-oX/-oS/-oG <file>: **Output scan in normal, XML, s|<rIpt kIddi3,
      and Grepable format, respectively, to the given filename.**
   - -oA <basename>: **Output in the three major formats at once**
@@ -107,7 +107,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - --stylesheet <path/URL>: **XSL stylesheet to transform XML output to HTML**
   - --webxml: **Reference stylesheet from Nmap.Org for more portable XML**
   - --no-stylesheet: **Prevent associating of XSL stylesheet w/XML output<br>**
-**MISC:**
+### **MISC:**
   - -6: **Enable IPv6 scanning**
   - -A: **Enable OS detection, version detection, script scanning, and traceroute**
   - --datadir <dirname>: **Specify custom Nmap data file location**
@@ -116,4 +116,23 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   - --unprivileged: **Assume the user lacks raw socket privileges**
   - -V: **Print version number**
   - -h: **Print this help summary page.<br>**
+
+## List of usefull commands:
+Port scanning 21 (FTP), 22 (SSH), 80 (HTTP), 139 and 445 (SMB), 1433 and 3306 (MSSQL and MySQL), and 3389 (RDP). 
+ - • nmap ip (scan port, state and service, tcp default)
+ - • nmap -sn ip (scan type ping)
+ - • nmap -sS ip (stealthy mode)
+ - • nmap --open ip (only open ports)
+ - • nmap ip -p- (scan all ports 65535)
+ - • nmap -Pn ip (scan WINDOWS)
+ - • nmap -Pn -p 80,445 ip (scan specific ports, 80 e 445)
+ - • nmap -Pn -p1-65535 ip (scan a range ports)
+ - • nmap -sU ip (UDP scan)
+ - • nmap -Pn  ip -v (scan with verbose mode)
+ - • nmap -Pn -O ip -v (Enable O.S. detection)
+ - • nmap -Pn -sC ip -v (Enable script scanning)
+ - • nmap -Pn -sV ip -v (Enables service and version detection)
+ - • nmap -Pn -O -sC -sS -sV -v ip -p22,21… (Complete scan to specific port on Windows)
+ - • nmap -O -sC -sV -sS -v ip -p21,22…(Complete scan to specific port on Linux)
+
 
