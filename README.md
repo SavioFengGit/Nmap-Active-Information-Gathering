@@ -150,7 +150,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   -  nmap -p445 --script smb-enum-domains --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera i domini disponibili)**
   -  nmap -p445 --script smb-enum-groups --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera gli user group)**
   -  nmap -p445 --script smb-enum-services --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera i servizi)**
-  -  nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 (**enumera tutte le cartelle shared)**
+  -  nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 (**enumera gli shares)**
 
 ## Linux Samba 445 
   -  nmap --script smb-os-discovery.nse -p 445 192.126.66.3 **(trova il nome del computer, il nome del dominio, il nome del workgroup, la versione del sistema operativo, il tipo di server e altre informazioni utili)**
@@ -166,7 +166,7 @@ Usage: nmap [Scan Type(s)] [Options] {target specification}<br>
   -  nmap -p445 --script smb-enum-domains --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera i domini disponibili)**
   -  nmap -p445 --script smb-enum-groups --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera gli user group)**
   -  nmap -p445 --script smb-enum-services --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera i servizi)**
-  -  nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera tutte le cartelle shared)**
+  -  nmap -p445 --script smb-enum-shares,smb-ls --script-args smbusername=administrator,smbpassword=smbserver_771 10.0.17.200 **(enumera gli shares)**
 
 
 ## Windows-Linux SMTP 25
